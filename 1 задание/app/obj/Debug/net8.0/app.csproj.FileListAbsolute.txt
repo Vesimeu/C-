@@ -1,0 +1,14 @@
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\bin\Debug\net8.0\app.exe
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\bin\Debug\net8.0\app.deps.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\bin\Debug\net8.0\app.runtimeconfig.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\bin\Debug\net8.0\app.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\bin\Debug\net8.0\app.pdb
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.AssemblyInfoInputs.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.AssemblyInfo.cs
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.csproj.CoreCompileInputs.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\refint\app.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.pdb
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.genruntimeconfig.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\ref\app.dll
