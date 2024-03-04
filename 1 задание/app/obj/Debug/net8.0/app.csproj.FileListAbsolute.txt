@@ -12,3 +12,4 @@ C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технол
 C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.pdb
 C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.genruntimeconfig.cache
 C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\ref\app.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\1 задание\app\obj\Debug\net8.0\app.sourcelink.json
