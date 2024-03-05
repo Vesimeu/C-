@@ -128,34 +128,6 @@ public class DynamicList : BaseList
         return clone;
     }
 
-    // public override void Sort()
-    // {
-    //     Array.Sort(buffer, 0, count);
-    // }
-
-    // public override bool IsEqual(BaseList other)
-    // {
-    //     DynamicList dynamicOther = other as DynamicList;
-    //     if (dynamicOther == null)
-    //     {
-    //         throw new ArgumentException("Other list is not of type DynamicList");
-    //     }
-
-    //     if (count != dynamicOther.count)
-    //     {
-    //         return false;
-    //     }
-
-    //     for (int i = 0; i < count; i++)
-    //     {
-    //         if (buffer[i] != dynamicOther.buffer[i])
-    //         {
-    //             return false;
-    //         }
-    //     }
-
-    //     return true;
-    // }
 
     private void Resize(int newSize)
     {

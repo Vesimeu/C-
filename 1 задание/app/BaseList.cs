@@ -8,27 +8,28 @@ public abstract class BaseList
     public abstract void Insert(int pos, int item);
     public abstract void Delete(int pos);
     public abstract void Clear();
+    
     public abstract int this[int i] { get; set; }
     public abstract void Print();
     public abstract void Assign(BaseList source);
     public abstract void AssignTo(BaseList dest);
     public abstract BaseList Clone();
- public virtual void Sort()
-    {
-        // Реализация сортировки пузырьком
-        for (int i = 0; i < Count - 1; i++)
+    public virtual void Sort()
         {
-            for (int j = 0; j < Count - 1 - i; j++)
+            // Реализация сортировки пузырьком
+            for (int i = 0; i < Count - 1; i++)
             {
-                if (this[j] > this[j + 1])
+                for (int j = 0; j < Count - 1 - i; j++)
                 {
-                    int temp = this[j];
-                    this[j] = this[j + 1];
-                    this[j + 1] = temp;
+                    if (this[j] > this[j + 1])
+                    {
+                        int temp = this[j];
+                        this[j] = this[j + 1];
+                        this[j + 1] = temp;
+                    }
                 }
             }
         }
-    }
     public virtual bool IsEqual(BaseList other)
     {
     // Проверяем, что другой список не равен null и что тип объекта является производным от BaseList

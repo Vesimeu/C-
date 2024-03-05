@@ -189,38 +189,5 @@ public class LinkedList : BaseList
         return clone;
     }
 
-    // public override void Sort()
-    // {
-    //     // Не реализовано для односвязного списка
-    //     throw new NotImplementedException("Sorting is not implemented for LinkedList");
-    // }
-
-//     public override bool IsEqual(BaseList other)
-//     {
-//         LinkedList linkedListOther = other as LinkedList;
-//         if (linkedListOther == null)
-//         {
-//             throw new ArgumentException("Other list is not of type LinkedList");
-//         }
-
-//         if (count != linkedListOther.count)
-//         {
-//             return false;
-//         }
-
-//         Node currentThis = head;
-//         Node currentOther = linkedListOther.head;
-//         while (currentThis != null && currentOther != null)
-//         {
-//             if (currentThis.Data != currentOther.Data)
-//             {
-//                 return false;
-//             }
-//             currentThis = currentThis.Next;
-//             currentOther = currentOther.Next;
-//         }
-
-//         return true;
-//     }
 }
 }

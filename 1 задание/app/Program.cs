@@ -83,21 +83,20 @@ namespace MyLists
     assignedList.Add(2);
     assignedList.Add(3);
 
+
+    Console.WriteLine("Исходный список dynamicList:");
+    dynamicList.Print();
     Console.WriteLine("Исходный список assignedList:");
     assignedList.Print();
 
 
-    Console.WriteLine("Исходный список dynamicList:");
-    dynamicList.Print();
-
-
-    //Вот она
+    
     dynamicList.Assign(assignedList);
 
-    Console.WriteLine("Список AssignedList после применения метода Assign:");
-    assignedList.Print();
     Console.WriteLine("Список DynamicList после применения метода Assign:");
     dynamicList.Print();
+    Console.WriteLine("Список AssignedList после применения метода Assign:");
+    assignedList.Print();
     Console.WriteLine();
 
     // Проверка метода AssignTo
@@ -120,6 +119,18 @@ namespace MyLists
     dynamicList.Print();
     Console.WriteLine("Список AssignedToList после применения метода AssignTo:");
     assignedToList.Print();
+    Console.WriteLine("");
+
+    // Блок проверки метода Sort
+    Console.WriteLine("Проверка метода Sort:");
+    dynamicList.Sort();
+    linkedList.Sort();
+
+    Console.WriteLine("Список DynamicList после сортировки:");
+    dynamicList.Print();
+    Console.WriteLine("Список LinkedList после сортировки:");
+    linkedList.Print();
+    Console.WriteLine();
 
     }
     }
