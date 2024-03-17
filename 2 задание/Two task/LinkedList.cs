@@ -25,7 +25,7 @@ public class LinkedList : BaseList
         count = 0;
     }
 
-    public override int Count => count;
+    // public override int Count => count;
 
     public override void Add(int item)
     {
@@ -49,7 +49,8 @@ public class LinkedList : BaseList
     {
         if (pos < 0 || pos > count)
         {
-            throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            // throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            return;
         }
 
         Node newNode = new Node(item);
@@ -76,7 +77,8 @@ public class LinkedList : BaseList
     {
         if (pos < 0 || pos >= count)
         {
-            throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            // throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            return;
         }
 
         if (pos == 0)
@@ -107,7 +109,8 @@ public class LinkedList : BaseList
         {
             if (i < 0 || i >= count)
             {
-                throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                // throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                return 0;
             }
 
             Node current = head;
@@ -121,7 +124,8 @@ public class LinkedList : BaseList
         {
             if (i < 0 || i >= count)
             {
-                throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                // throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                
             }
 
             Node current = head;
@@ -133,60 +137,50 @@ public class LinkedList : BaseList
         }
     }
 
-    public override void Print()
+    //Дорогу молодым!
+    protected override BaseList CloneInternal()
     {
-        Node current = head;
-        while (current != null)
-        {
-            Console.Write(current.Data + " ");
-            current = current.Next;
-        }
-        Console.WriteLine();
+    LinkedList clone = new LinkedList();
+    return clone;
     }
 
-    public override void Assign(BaseList source)
+  public override void Sort()
     {
-        LinkedList linkedListSource = source as LinkedList;
-        if (linkedListSource == null)
-        {
-            throw new ArgumentException("Source list is not of type LinkedList");
-        }
-
-        head = null;
-        count = 0;
-
-        Node currentSource = linkedListSource.head;
-        while (currentSource != null)
-        {
-            Add(currentSource.Data);
-            currentSource = currentSource.Next;
-        }
+    if (head == null || head.Next == null)
+    {
+        // Список пуст или содержит только один элемент, уже отсортирован
+        return;
     }
 
-    public override void AssignTo(BaseList dest)
+    Node sorted = null; // Голова отсортированного списка
+
+    Node current = head;
+    while (current != null)
     {
-        LinkedList linkedListDest = dest as LinkedList;
-        if (linkedListDest == null)
+        Node next = current.Next; // Запоминаем следующий узел перед изменением ссылок
+
+        if (sorted == null || current.Data <= sorted.Data)
         {
-            throw new ArgumentException("Destination list is not of type LinkedList");
+            // Вставляем текущий узел в начало отсортированного списка
+            current.Next = sorted;
+            sorted = current;
+        }
+        else
+        {
+            // Ищем правильное место для вставки текущего узла в отсортированный список
+            Node temp = sorted;
+            while (temp.Next != null && temp.Next.Data < current.Data)
+            {
+                temp = temp.Next;
+            }
+            current.Next = temp.Next;
+            temp.Next = current;
         }
 
-        linkedListDest.head = null;
-        linkedListDest.count = 0;
-
-        Node current = head;
-        while (current != null)
-        {
-            linkedListDest.Add(current.Data);
-            current = current.Next;
-        }
+        current = next; // Переходим к следующему узлу
     }
 
-    public override BaseList Clone()
-    {
-        LinkedList clone = new LinkedList();
-        clone.Assign(this);
-        return clone;
+    head = sorted; // Обновляем голову списка
     }
 
 }

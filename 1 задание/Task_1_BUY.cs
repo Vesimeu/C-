@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+
 public class DynamicList
 {
     private int[] buffer; // Массив для хранения элементов списка
@@ -20,16 +21,22 @@ public class DynamicList
         buffer[count++] = item;
     }
 
-    public void RemoveDuplicates() {
-    for (int i = 0; i < count - 1; i++) {
-        for (int j = i + 1; j < count; j++) {
-            if (buffer[i] == buffer[j]) {
-                Delete(j);
-                j--; // После удаления уменьшаю индекс, чтобы не пропустить следующий элемент
+    // Метод для удаления дубликатов
+    //ЭТОТ МЕТОД ДАЛИ МНЕ НА ДОП ЗАДАНИЕ, УДАЛИ ЕГО ПРИ НЕОБХОДИМОСТИ 
+    public void RemoveDuplicates()
+    {
+        for (int i = 0; i < count - 1; i++)
+        {
+            for (int j = i + 1; j < count; j++)
+            {
+                if (buffer[i] == buffer[j])
+                {
+                    Delete(j);
+                    j--; // После удаления уменьшаю индекс, чтобы не пропустить следующий элемент
+                }
             }
         }
     }
-}
 
     // Метод для вставки элемента на указанную позицию
     public void Insert(int item, int pos)
@@ -55,22 +62,21 @@ public class DynamicList
     }
 
     // Метод для удаления элемента с указанной позиции
-public void Delete(int index)
-{
-    if (index < 0 || index >= count)
+    public void Delete(int index)
     {
-        // throw new ArgumentOutOfRangeException(nameof(index), "Индекс вне диапазона списка");
-        return;
-    }
+        if (index < 0 || index >= count)
+        {
+            return;
+        }
 
-    for (int i = index; i < count - 1; i++)
-    {
-        buffer[i] = buffer[i + 1];
-    }
+        for (int i = index; i < count - 1; i++)
+        {
+            buffer[i] = buffer[i + 1];
+        }
 
-    buffer[count - 1] = 0; // Обнуляем последний элемент после сдвига
-    count--;
-}
+        buffer[count - 1] = 0; // Обнуляем последний элемент после сдвига
+        count--;
+    }
 
     // Метод для очистки списка
     public void Clear()
@@ -80,10 +86,7 @@ public void Delete(int index)
     }
 
     // Свойство для получения количества элементов в списке
-    public int Count
-    {
-        get { return count; }
-    }
+    public int Count => count;
 
     // Индексатор для доступа к элементам списка
     public int this[int i]
@@ -126,10 +129,9 @@ public void Delete(int index)
         }
         Console.WriteLine();
     }
-
-
 }
-    public class LinkedList
+
+public class LinkedList
 {
     private class Node
     {
@@ -170,72 +172,72 @@ public void Delete(int index)
         count++;
     }
 
-
-//Метод get return 0
-//Меьтод set То просто игнорирует 
-
     public int this[int index]
-{
-    get
     {
-        Node current = head;
-        for (int i = 0; i < index; i++)
+        get
         {
-            if (current != null)
+            Node current = head;
+            for (int i = 0; i < index; i++)
             {
-                current = current.Next;
+                if (current != null)
+                {
+                    current = current.Next;
+                }
+                else
+                {
+                    return 0;
+                }
             }
-            else
-            {
-                // throw new ArgumentOutOfRangeException(nameof(index), "Индекс вне диапазона списка");
-            }
+            return current.Data;
         }
-        // return current != null ? current.Data : throw new ArgumentOutOfRangeException(nameof(index), "Индекс вне диапазона списка");
-        return current.Data;
-    }
-    set
-    {
-        Node current = head;
-        for (int i = 0; i < index; i++)
+        set
         {
+            Node current = head;
+            for (int i = 0; i < index; i++)
+            {
+                if (current != null)
+                {
+                    current = current.Next;
+                }
+                else
+                {
+                    return;
+                }
+            }
             if (current != null)
             {
-                current = current.Next;
+                current.Data = value;
             }
             else
             {
-                // throw new ArgumentOutOfRangeException(nameof(index), "Индекс вне диапазона списка");
                 return;
             }
         }
-        if (current != null)
-        {
-            current.Data = value;
-        }
-        else
-        {
-            // throw new ArgumentOutOfRangeException(nameof(index), "Индекс вне диапазона списка");
-            return;
-        }
     }
-}
 
-    public void RemoveDuplicates() {
-    Node current = head;
+//ЭТОТ МЕТОД ДАЛИ МНЕ НА ДОП ЗАДАНИЕ, УДАЛИ ЕГО ПРИ НЕОБХОДИМОСТИ 
+    public void RemoveDuplicates()
+    {
+        Node current = head;
 
-    while (current != null && current.Next != null) {
-        Node runner = current;
-        while (runner.Next != null) {
-            if (current.Data == runner.Next.Data) {
-                runner.Next = runner.Next.Next;
-                count--; // Уменьшаем счетчик общего количества элементов
-            } else {
-                runner = runner.Next;
+        while (current != null && current.Next != null)
+        {
+            Node runner = current;
+            while (runner.Next != null)
+            {
+                if (current.Data == runner.Next.Data)
+                {
+                    runner.Next = runner.Next.Next;
+                    count--; // Уменьшаем счетчик общего количества элементов
+                }
+                else
+                {
+                    runner = runner.Next;
+                }
             }
+            current = current.Next;
         }
-        current = current.Next;
     }
-}
 
     public void Insert(int data, int pos)
     {
@@ -264,39 +266,38 @@ public void Delete(int index)
         }
         count++;
     }
-    
-public void Delete(int pos)
-{
-    if (pos < 0 || pos >= count) // Проверка корректности позиции
-    {
-        return; // Или выбросить исключение
-    }
 
-    if (pos == 0) // Удаление головы списка
+    public void Delete(int pos)
     {
-        head = head.Next;
-    }
-    else // Удаление узла из середины или конца списка
-    {
-        Node current = head;
-        for (int i = 0; i < pos - 1; i++) // Перемещение к узлу, предшествующему узлу для удаления
+        if (pos < 0 || pos >= count) // Проверка корректности позиции
         {
-            current = current.Next;
+            return; // Или выбросить исключение
         }
 
-        // Если удаляем последний элемент, то устанавливаем Next предпоследнего элемента в null
-        if (current.Next != null && current.Next.Next == null)
+        if (pos == 0) // Удаление головы списка
         {
-            current.Next = null;
+            head = head.Next;
         }
-        else
+        else // Удаление узла из середины или конца списка
         {
-            current.Next = current.Next.Next; // Пропускаем узел, который нужно удалить
-        }
-    }
-    count--;
-}
+            Node current = head;
+            for (int i = 0; i < pos - 1; i++) // Перемещение к узлу, предшествующему узлу для удаления
+            {
+                current = current.Next;
+            }
 
+            // Если удаляем последний элемент, то устанавливаем Next предпоследнего элемента в null
+            if (current.Next != null && current.Next.Next == null)
+            {
+                current.Next = null;
+            }
+            else
+            {
+                current.Next = current.Next.Next; // Пропускаем узел, который нужно удалить
+            }
+        }
+        count--;
+    }
 
     public void Clear()
     {
@@ -304,10 +305,7 @@ public void Delete(int pos)
         count = 0;
     }
 
-    public int Count
-    {
-        get { return count; } // Возвращение текущего количества узлов в списке
-    }
+    public int Count => count;
 
     public void Cout()
     {
@@ -321,84 +319,71 @@ public void Delete(int pos)
     }
 }
 
-    class PerformanceTester
+class PerformanceTester
 {
     private static Random random = new Random();
 
-public static void TestPerformance()
-{
-    DynamicList dynamicList = new DynamicList();
-    LinkedList linkedList = new LinkedList();
-
-    for (int i = 0; i < 10000; i++)
+    public static void TestPerformance()
     {
-        int operation = random.Next(5); // Выбор операции
-        int value = random.Next(100); // Случайное значение
-        int index = random.Next(1, 100); // Случайный индекс
+        DynamicList dynamicList = new DynamicList();
+        LinkedList linkedList = new LinkedList();
 
-        try
+        for (int i = 0; i < 10000; i++)
         {
-            switch (operation)
+            int operation = random.Next(7); // Выбор операции
+            int value = random.Next(100); // Случайное значение
+            int index = random.Next(1, 100); // Случайный индекс
+
+            try
             {
-                case 0:
-                    dynamicList.Add(value);
-                    linkedList.Add(value);
-                    break;
-                case 1:
-                    if (dynamicList.Count > 0 && linkedList.Count > 0)
-                    {
-                        dynamicList.Insert(value, index % dynamicList.Count);
-                        linkedList.Insert(value, index % linkedList.Count);
-                    }
-                    break;
-                case 2:
-                    if (dynamicList.Count > 0 && linkedList.Count > 0)
-                    {
-                        dynamicList.Delete(index);
-                        linkedList.Delete(index);
-                    }
-                    break;
-                case 3:
-                    // dynamicList.Clear();
-                    // linkedList.Clear();
-                    break;
-                case 4:
-                    if (dynamicList.Count > 0 && linkedList.Count > 0 )
-                    {
-                        dynamicList[index % dynamicList.Count] = value;
-                        linkedList[index % linkedList.Count] = value;
-                    }
-                    break;
+                switch (operation)
+                {
+                    case 0:
+                        dynamicList.Add(value);
+                        linkedList.Add(value);
+                        break;
+                    case 1:
+                        if (dynamicList.Count > 0 && linkedList.Count > 0)
+                        {
+                            dynamicList.Insert(value, index % dynamicList.Count);
+                            linkedList.Insert(value, index % linkedList.Count);
+                        }
+                        break;
+                    case 2:
+                        if (dynamicList.Count > 0 && linkedList.Count > 0)
+                        {
+                            dynamicList.Delete(index);
+                            linkedList.Delete(index);
+                        }
+                        break;
+                    case 3:
+                        dynamicList.Clear();
+                        linkedList.Clear();
+                        break;
+                    case 4:
+                        if (dynamicList.Count > 0 && linkedList.Count > 0)
+                        {
+                            dynamicList[index % dynamicList.Count] = value;
+                            linkedList[index % linkedList.Count] = value;
+                        }
+                        break;
+                    case 5:
+                        dynamicList.RemoveDuplicates();
+                        linkedList.RemoveDuplicates();
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Ошибка: {e.Message}");
             }
         }
-        catch (Exception e)
-        {
-            Console.WriteLine($"Ошибка: {e.Message}");
-        }
     }
-    Console.WriteLine(dynamicList.Count == linkedList.Count);
-    // Проверка на одинаковость списков
-    bool areListsEqual = dynamicList.Count == linkedList.Count;
-    for (int i = 1; i < dynamicList.Count && areListsEqual; i++)
-    {
-        if (dynamicList[i] != linkedList[i])
-        {
-            Console.WriteLine(dynamicList[i]);
-            Console.WriteLine(linkedList[i]);
-            Console.WriteLine(i);
-            areListsEqual = false;
-        }
-    }
-
-    Console.WriteLine($"Списки {(areListsEqual ? "одинаковы" : "различны")}.");
-    Console.WriteLine("Тестирование завершено.");
 }
-}
-
 
 class Programs
 {
-    static void Main(string[] args) 
+    static void Main(string[] args)
     {
         Console.WriteLine("Тестирование ");
         // Тестирование DynamicList
@@ -431,38 +416,7 @@ class Programs
         linkedList.Clear();
         linkedList.Cout(); // Должно вывести пустую строку
 
-    Console.WriteLine("Тестирование 2");
-    PerformanceTester.TestPerformance();
-
-    Console.WriteLine("Тестирование метода RemoveDublicat");
-        Console.WriteLine("Тестирование DynamicList:");
-        dynamicList.Cout();
-        dynamicList.Add(1);
-        dynamicList.Add(2);
-        dynamicList.RemoveDuplicates();
-        dynamicList.Cout();
-        // dynamicList.Add(1);
-        // dynamicList.Add(2);
-        // dynamicList.Add(2);
-        // dynamicList.Add(3);
-        // dynamicList.Add(1);
-        // dynamicList.Cout();
-        // dynamicList.RemoveDuplicates();
-        // dynamicList.Cout();
-
-     Console.WriteLine("\nТестирование LinkedList:");
-     linkedList.Cout();
-     linkedList.Add(1);
-     linkedList.Add(2);
-     linkedList.RemoveDuplicates();
-     linkedList.Cout();
-        // linkedList.Add(1);
-        // linkedList.Add(2);
-        // linkedList.Add(2);
-        // linkedList.Add(3);
-        // linkedList.Add(1);
-        // linkedList.Cout();
-        // linkedList.RemoveDuplicates();
-        // linkedList.Cout();
+        Console.WriteLine("Тестирование 2");
+        PerformanceTester.TestPerformance();
     }
 }

@@ -13,7 +13,7 @@ public class DynamicList : BaseList
         count = 0;
     }
 
-    public override int Count => count;
+    // public override int Count => count;
 
     public override void Add(int item)
     {
@@ -28,7 +28,8 @@ public class DynamicList : BaseList
     {
         if (pos < 0 || pos > count)
         {
-            throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            // throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            return;
         }
 
         if (count == buffer.Length)
@@ -49,7 +50,8 @@ public class DynamicList : BaseList
     {
         if (pos < 0 || pos >= count)
         {
-            throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            // throw new ArgumentOutOfRangeException(nameof(pos), "Position is out of range");
+            return;
         }
 
         for (int i = pos; i < count - 1; i++)
@@ -72,7 +74,8 @@ public class DynamicList : BaseList
         {
             if (i < 0 || i >= count)
             {
-                throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                // throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                return 0;
             }
             return buffer[i];
         }
@@ -80,53 +83,19 @@ public class DynamicList : BaseList
         {
             if (i < 0 || i >= count)
             {
-                throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                // throw new ArgumentOutOfRangeException(nameof(i), "Index is out of range");
+                // return 0;
             }
             buffer[i] = value;
         }
     }
 
-    public override void Print()
-    {
-        for (int i = 0; i < count; i++)
-        {
-            Console.Write(buffer[i] + " ");
-        }
-        Console.WriteLine();
-    }
 
-    public override void Assign(BaseList source)
-    {
-        DynamicList dynamicSource = source as DynamicList;
-        if (dynamicSource == null)
-        {
-            throw new ArgumentException("Source list is not of type DynamicList");
-        }
-
-        buffer = new int[dynamicSource.buffer.Length];
-        Array.Copy(dynamicSource.buffer, buffer, dynamicSource.count);
-        count = dynamicSource.count;
-    }
-
-    public override void AssignTo(BaseList dest)
-    {
-        DynamicList dynamicDest = dest as DynamicList;
-        if (dynamicDest == null)
-        {
-            throw new ArgumentException("Destination list is not of type DynamicList");
-        }
-
-        dynamicDest.buffer = new int[buffer.Length];
-        Array.Copy(buffer, dynamicDest.buffer, count);
-        dynamicDest.count = count;
-    }
-
-    public override BaseList Clone()
-    {
-        DynamicList clone = new DynamicList();
-        clone.Assign(this);
-        return clone;
-    }
+    protected override BaseList CloneInternal()
+{
+    DynamicList clone = new DynamicList();
+    return clone;
+}
 
 
     private void Resize(int newSize)

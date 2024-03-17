@@ -1,0 +1,15 @@
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\bin\Debug\net8.0\Two task.exe
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\bin\Debug\net8.0\Two task.deps.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\bin\Debug\net8.0\Two task.runtimeconfig.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\bin\Debug\net8.0\Two task.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\bin\Debug\net8.0\Two task.pdb
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.AssemblyInfoInputs.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.AssemblyInfo.cs
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.csproj.CoreCompileInputs.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.sourcelink.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\refint\Two task.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.pdb
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\Two task.genruntimeconfig.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\2 задание\Two task\obj\Debug\net8.0\ref\Two task.dll
