@@ -123,18 +123,21 @@ public abstract class BaseList<T> where T : IComparable<T>
 
     public virtual void Sort()
     {
-        for (int i = 0; i < Count - 1; i++)
-        {
-            for (int j = 0; j < Count - 1 - i; j++)
-            {
-                if (this[j].CompareTo(this[j + 1]) > 0)
-                {
-                    T temp = this[j];
-                    this[j] = this[j + 1];
-                    this[j + 1] = temp;
-                }
-            }
-        }
+    // Создаем временный массив для сортировки
+    T[] tempArray = new T[Count];
+    for (int i = 0; i < Count; i++)
+    {
+        tempArray[i] = this[i];
+    }
+
+    // Сортируем временный массив с использованием CompareTo
+    Array.Sort(tempArray);
+
+    // Заменяем элементы в текущем списке отсортированными элементами из временного массива
+    for (int i = 0; i < Count; i++)
+    {
+        this[i] = tempArray[i];
+    }
     }
 
     public void SaveToFile(string fileName)
@@ -178,4 +181,8 @@ public abstract class BaseList<T> where T : IComparable<T>
     }
 
     public abstract IEnumerator<T> GetEnumerator();
+     public override IEnumerator<T> GetEnumerator()
+{
+    return new ListEnumerator<T>(this);
+}
 }
