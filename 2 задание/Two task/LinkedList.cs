@@ -19,13 +19,13 @@ public class LinkedList : BaseList
     private Node head;
     private int count;
 
+    public override int Count => count;
     public LinkedList()
     {
         head = null;
         count = 0;
     }
 
-    // public override int Count => count;
 
     public override void Add(int item)
     {

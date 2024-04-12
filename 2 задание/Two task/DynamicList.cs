@@ -13,7 +13,7 @@ public class DynamicList : BaseList
         count = 0;
     }
 
-    // public override int Count => count;
+    public override int Count => count;
 
     public override void Add(int item)
     {

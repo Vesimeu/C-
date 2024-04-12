@@ -3,8 +3,7 @@ using System;
 public abstract class BaseList
 {
     // Абстрактные методы, которые будут реализованы в классах-наследниках
-    public virtual int Count { get; }
-
+    public virtual int Count { get; protected set; }
     public abstract void Add(int item);
     public abstract void Insert(int pos, int item);
     public abstract void Delete(int pos);
