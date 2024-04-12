@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-
+using System.Collections.Generic;
 public delegate void ChangeEventHandler(object sender, EventArgs e);
 
 public class BadIndexException : Exception
@@ -180,9 +180,21 @@ public abstract class BaseList<T> where T : IComparable<T>
         }
     }
 
-    public abstract IEnumerator<T> GetEnumerator();
-     public override IEnumerator<T> GetEnumerator()
-{
-    return new ListEnumerator<T>(this);
-}
+//     public virtual IEnumerator<T> GetEnumeratorInternal()
+// {
+//     return new ListEnumerator<T>(this);
+// }
+
+// public IEnumerator<T> GetEnumerator()
+// {
+//     return GetEnumeratorInternal();
+// }
+public void ForEach(Action<T> action)
+    {
+        for (int i = 0; i < Count; i++)
+        {
+            action(this[i]);
+        }
+    }
+
 }

@@ -106,8 +106,8 @@ namespace MyLists
             assignedToList.Print();
             Console.WriteLine();
 
-            Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
-            TestPerformance();
+            // Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
+            // TestPerformance();
         }
 
         public static void TestPerformance()
@@ -132,8 +132,8 @@ namespace MyLists
                             linkedList.Add(value);
                             break;
                         case 1:
-                            dynamicList.Insert(value, index % dynamicList.Count);
-                            linkedList.Insert(value, index % linkedList.Count);
+                            dynamicList.Insert(index % dynamicList.Count, value);
+                            linkedList.Insert(index % linkedList.Count, value);
                             break;
                         case 2:
                             dynamicList.Delete(index);

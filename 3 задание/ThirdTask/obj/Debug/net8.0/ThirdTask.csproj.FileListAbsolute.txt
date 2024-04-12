@@ -1,0 +1,15 @@
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.AssemblyInfoInputs.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.AssemblyInfo.cs
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.csproj.CoreCompileInputs.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.sourcelink.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\bin\Debug\net8.0\ThirdTask.exe
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\bin\Debug\net8.0\ThirdTask.deps.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\bin\Debug\net8.0\ThirdTask.runtimeconfig.json
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\bin\Debug\net8.0\ThirdTask.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\bin\Debug\net8.0\ThirdTask.pdb
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\refint\ThirdTask.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.pdb
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.genruntimeconfig.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ref\ThirdTask.dll

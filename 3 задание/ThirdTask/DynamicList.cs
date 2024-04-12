@@ -2,7 +2,7 @@ using System;
 
 namespace MyLists
 {
-    public class DynamicList<T> : BaseList<T> where T : IComparable
+    public class DynamicList<T> : BaseList<T> where T : IComparable<T>
     {
         private T[] buffer;
         private int count;
@@ -22,7 +22,7 @@ namespace MyLists
                 Resize(buffer.Length * 2);
             }
             buffer[count++] = item;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override void Insert(int pos, T item)
@@ -44,7 +44,7 @@ namespace MyLists
 
             buffer[pos] = item;
             count++;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override void Delete(int pos)
@@ -60,14 +60,14 @@ namespace MyLists
             }
 
             count--;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override void Clear()
         {
             buffer = new T[4];
             count = 0;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override T this[int i]
@@ -87,13 +87,16 @@ namespace MyLists
                     throw new BadIndexException("Index is out of range");
                 }
                 buffer[i] = value;
-                OnChange();
+                OnChange(EventArgs.Empty);
             }
         }
 
         protected override BaseList<T> CloneInternal()
         {
             DynamicList<T> clone = new DynamicList<T>();
+            clone.buffer = new T[buffer.Length];
+            Array.Copy(buffer, clone.buffer, count);
+            clone.count = count;
             return clone;
         }
 

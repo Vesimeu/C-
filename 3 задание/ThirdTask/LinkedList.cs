@@ -2,7 +2,7 @@ using System;
 
 namespace MyLists
 {
-    public class LinkedList<T> : BaseList<T> where T : IComparable
+    public class LinkedList<T> : BaseList<T> where T : IComparable<T>
     {
         private class Node
         {
@@ -43,7 +43,7 @@ namespace MyLists
                 current.Next = new Node(item);
             }
             count++;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override void Insert(int pos, T item)
@@ -71,7 +71,7 @@ namespace MyLists
                 current.Next = newNode;
             }
             count++;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override void Delete(int pos)
@@ -95,14 +95,14 @@ namespace MyLists
                 current.Next = current.Next.Next;
             }
             count--;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override void Clear()
         {
             head = null;
             count = 0;
-            OnChange();
+            OnChange(EventArgs.Empty);
         }
 
         public override T this[int i]
@@ -134,19 +134,31 @@ namespace MyLists
                     current = current.Next;
                 }
                 current.Data = value;
-                OnChange();
+                OnChange(EventArgs.Empty);
             }
         }
 
         protected override BaseList<T> CloneInternal()
         {
             LinkedList<T> clone = new LinkedList<T>();
+            Node current = head;
+            Node cloneCurrent = null;
+            while (current != null)
+            {
+                if (clone.head == null)
+                {
+                    clone.head = new Node(current.Data);
+                    cloneCurrent = clone.head;
+                }
+                else
+                {
+                    cloneCurrent.Next = new Node(current.Data);
+                    cloneCurrent = cloneCurrent.Next;
+                }
+                current = current.Next;
+            }
+            clone.count = count;
             return clone;
-        }
-
-        public override void Sort()
-        {
-            // Ваш алгоритм сортировки
         }
     }
 }
