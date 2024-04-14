@@ -10,6 +10,7 @@ namespace MyLists
             BaseList<string> linkedList = new LinkedList<string>();
 
             // Добавление элементов
+             Console.WriteLine("*** ТЕСТИРОВКА ADD*** \n");
             dynamicList.Add("apple");
             dynamicList.Add("banana");
             dynamicList.Add("orange");
@@ -25,6 +26,7 @@ namespace MyLists
             Console.WriteLine();
 
             // Вставка элемента
+             Console.WriteLine("*** ТЕСТИРОВКА Insert***\n");
             dynamicList.Insert(1, "grape");
             linkedList.Insert(1, "grape");
 
@@ -35,6 +37,7 @@ namespace MyLists
             Console.WriteLine();
 
             // Удаление элемента
+             Console.WriteLine("*** ТЕСТИРОВКА Delete***\n");
             dynamicList.Delete(2);
             linkedList.Delete(2);
 
@@ -45,6 +48,7 @@ namespace MyLists
             Console.WriteLine();
 
             // Очистка списков
+             Console.WriteLine("*** ТЕСТИРОВКА Clear***\n");
             dynamicList.Clear();
             linkedList.Clear();
 
@@ -55,6 +59,7 @@ namespace MyLists
             Console.WriteLine();
 
             // Проверка на равенство списков
+             Console.WriteLine("*** ТЕСТИРОВКА IsEqual***\n");
             dynamicList.Add("apple");
             dynamicList.Add("banana");
             dynamicList.Add("orange");
@@ -67,7 +72,16 @@ namespace MyLists
             Console.WriteLine($"Списки {(areListsEqual ? "одинаковы" : "различны")}.");
             Console.WriteLine();
 
+
+            Console.WriteLine("*** ТЕСТИРОВКА CHANGE***\n");
+
+            Console.WriteLine($"Количество изменений DynamicList: {dynamicList.ChangeCount}");
+            Console.WriteLine($"Количество изменений LinkedList: {linkedList.ChangeCount}");
+
+            Console.WriteLine();
+
             // Проверка метода Assign
+             Console.WriteLine("*** ТЕСТИРОВКА Assign***\n");
             BaseList<string> assignedList = new DynamicList<string>();
 
             assignedList.Add("pineapple");
@@ -87,6 +101,7 @@ namespace MyLists
             Console.WriteLine();
 
             // Проверка метода AssignTo
+             Console.WriteLine("*** ТЕСТИРОВКА AssignTo***\n");
             dynamicList.Add("watermelon");
             BaseList<string> assignedToList = new DynamicList<string>();
 
@@ -105,6 +120,47 @@ namespace MyLists
             Console.WriteLine("Список AssignedToList после применения метода AssignTo:");
             assignedToList.Print();
             Console.WriteLine();
+
+            // Тестирование методов SaveToFile и LoadFromFile
+            Console.WriteLine("*** ТЕСТИРОВКА SaveToFile и LoadFromFile ***\n");
+
+            string dynamicListFile = "dynamicList.txt";
+            string linkedListFile = "linkedList.txt";
+
+            dynamicList.SaveToFile(dynamicListFile);
+            linkedList.SaveToFile(linkedListFile);
+
+            dynamicList.Clear();
+            linkedList.Clear();
+
+            dynamicList.LoadFromFile(dynamicListFile);
+            linkedList.LoadFromFile(linkedListFile);
+
+            Console.WriteLine("Список DynamicList после загрузки из файла:");
+            dynamicList.Print();
+            Console.WriteLine("Список LinkedList после загрузки из файла:");
+            linkedList.Print();
+            Console.WriteLine();
+
+            // Тестирование метода ForEach
+            Console.WriteLine("*** ТЕСТИРОВКА ForEach ***\n");
+
+            dynamicList.Add("apple");
+            dynamicList.Add("banana");
+            dynamicList.Add("orange");
+
+            linkedList.Add("apple");
+            linkedList.Add("banana");
+            linkedList.Add("orange");
+
+            dynamicList.ForEach(Console.WriteLine);
+            Console.WriteLine();
+
+            linkedList.ForEach(Console.WriteLine);
+            Console.WriteLine();
+
+
+
 
             // Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
             // TestPerformance();

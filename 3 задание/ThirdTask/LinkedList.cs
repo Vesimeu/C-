@@ -43,7 +43,7 @@ namespace MyLists
                 current.Next = new Node(item);
             }
             count++;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //1
         }
 
         public override void Insert(int pos, T item)
@@ -71,7 +71,7 @@ namespace MyLists
                 current.Next = newNode;
             }
             count++;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //2
         }
 
         public override void Delete(int pos)
@@ -95,14 +95,14 @@ namespace MyLists
                 current.Next = current.Next.Next;
             }
             count--;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //3
         }
 
         public override void Clear()
         {
             head = null;
             count = 0;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //4
         }
 
         public override T this[int i]
@@ -134,7 +134,7 @@ namespace MyLists
                     current = current.Next;
                 }
                 current.Data = value;
-                OnChange(EventArgs.Empty);
+                OnChange(EventArgs.Empty); //5
             }
         }
 

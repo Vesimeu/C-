@@ -22,7 +22,7 @@ namespace MyLists
                 Resize(buffer.Length * 2);
             }
             buffer[count++] = item;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //1
         }
 
         public override void Insert(int pos, T item)
@@ -44,7 +44,7 @@ namespace MyLists
 
             buffer[pos] = item;
             count++;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //2
         }
 
         public override void Delete(int pos)
@@ -60,14 +60,14 @@ namespace MyLists
             }
 
             count--;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //3
         }
 
         public override void Clear()
         {
             buffer = new T[4];
             count = 0;
-            OnChange(EventArgs.Empty);
+            OnChange(EventArgs.Empty); //4
         }
 
         public override T this[int i]
@@ -87,7 +87,7 @@ namespace MyLists
                     throw new BadIndexException("Index is out of range");
                 }
                 buffer[i] = value;
-                OnChange(EventArgs.Empty);
+                OnChange(EventArgs.Empty); //5
             }
         }
 
