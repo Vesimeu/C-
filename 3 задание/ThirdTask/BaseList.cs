@@ -42,10 +42,17 @@ public abstract class BaseList<T> where T : IComparable<T>
         return 0;
     }
     public event ChangeEventHandler Change;
+    private int changeCount = 0;
 
     protected virtual void OnChange(EventArgs e)
     {
+        changeCount++; // Увеличиваем счётчик изменений
         Change?.Invoke(this, e);
+    }
+
+    public int ChangeCount
+    {
+        get { return changeCount; }
     }
 
     public virtual int Count { get; }
