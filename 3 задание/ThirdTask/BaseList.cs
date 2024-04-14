@@ -196,12 +196,12 @@ public abstract class BaseList<T> where T : IComparable<T>
 // {
 //     return GetEnumeratorInternal();
 // }
-public void ForEach(Action<T> action)
-    {
-        for (int i = 0; i < Count; i++)
+    public void ForEach(Action<T> action)
         {
-            action(this[i]);
+            for (int i = 0; i < Count; i++)
+            {
+                action(this[i]);
+            }
         }
-    }
 
 }

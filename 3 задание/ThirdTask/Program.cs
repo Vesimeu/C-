@@ -153,10 +153,10 @@ namespace MyLists
             linkedList.Add("banana");
             linkedList.Add("orange");
 
-            dynamicList.ForEach(Console.WriteLine);
+            dynamicList.ForEach(item => Console.WriteLine(item));
             Console.WriteLine();
 
-            linkedList.ForEach(Console.WriteLine);
+            linkedList.ForEach(item => Console.WriteLine(item));
             Console.WriteLine();
 
 
