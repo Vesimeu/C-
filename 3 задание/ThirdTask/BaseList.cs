@@ -196,7 +196,7 @@ public abstract class BaseList<T> where T : IComparable<T>
     // {
     //     return GetEnumeratorInternal();
     // }
-    
+
     public void ForEach(Action<T> action)
         {
             for (int i = 0; i < Count; i++)
@@ -247,7 +247,12 @@ public abstract class BaseList<T> where T : IComparable<T>
         // Возвращаем объединенный список
         return result;
     }
-
-
-
+        //Так, а теперь я хочу чтобы я мог добавлять элементы при создании списка
+        public virtual void AddRange(params T[] items)
+    {
+        foreach (T item in items)
+        {
+            Add(item);
+        }
+    }
 }

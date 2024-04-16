@@ -207,8 +207,15 @@ namespace MyLists
             strings.Print();
 
 
-            // Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
-            // TestPerformance();
+            Console.WriteLine("*** ТЕСТИРОВКА метода AddRange()***");
+            BaseList<int> TestNumbers = new DynamicList<int>();
+            TestNumbers.AddRange(1, 2, 3, 4, 5);
+            TestNumbers.Print();
+
+
+
+            Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
+            TestPerformance();
         }
 
         public static void TestPerformance()
@@ -258,6 +265,8 @@ namespace MyLists
             bool areListsEqual = dynamicList.IsEqual(linkedList);
             Console.WriteLine($"Списки {(areListsEqual ? "одинаковы" : "различны")}.");
             Console.WriteLine("Тестирование завершено.");
+            Console.WriteLine($"Количетсво изменений в динамик лист: {dynamicList.ChangeCount}");
+            Console.WriteLine($"Количество изменений в линкед лист: {linkedList.ChangeCount}");
         }
     }
 }
