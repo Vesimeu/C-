@@ -59,7 +59,6 @@ namespace MyLists
             Console.WriteLine();
 
             // Проверка на равенство списков
-             Console.WriteLine("*** ТЕСТИРОВКА IsEqual***\n");
             dynamicList.Add("apple");
             dynamicList.Add("banana");
             dynamicList.Add("orange");
@@ -68,6 +67,14 @@ namespace MyLists
             linkedList.Add("banana");
             linkedList.Add("orange");
 
+                // Сравниваем списки снова
+            Console.WriteLine("*** ТЕСТИРОВКА СРАВНЕНИЯ ***\n");
+            Console.WriteLine("Сравнение списков с помощью оператора == после добавления элементов во второй список:");
+            Console.WriteLine(dynamicList == linkedList); // Ожидается true
+            Console.WriteLine(dynamicList != linkedList); // Ожидается false
+            Console.WriteLine();
+
+            Console.WriteLine("*** ТЕСТИРОВКА IsEqual***\n");
             bool areListsEqual = dynamicList.IsEqual(linkedList);
             Console.WriteLine($"Списки {(areListsEqual ? "одинаковы" : "различны")}.");
             Console.WriteLine();
@@ -114,6 +121,7 @@ namespace MyLists
             assignedToList.Print();
 
             dynamicList.AssignTo(assignedToList);
+            Console.WriteLine();
 
             Console.WriteLine("Список DynamicList после применения метода AssignTo:");
             dynamicList.Print();
@@ -160,7 +168,13 @@ namespace MyLists
             Console.WriteLine();
 
 
+            // Объединяем списки
+            Console.WriteLine("*** ТЕСТИРОВКА оператора '+' ***\n");
+            BaseList<string> mergedList = dynamicList + linkedList;
 
+            // Выводим объединенный список
+            Console.WriteLine("Объединенный список:");
+            mergedList.Print();
 
             // Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
             // TestPerformance();

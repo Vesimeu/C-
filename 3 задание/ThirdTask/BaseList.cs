@@ -204,4 +204,49 @@ public abstract class BaseList<T> where T : IComparable<T>
             }
         }
 
+        //Добавлю ка сюда перезгрузку операторов:
+       public static bool operator ==(BaseList<T> list1, BaseList<T> list2)
+        {
+            if (ReferenceEquals(list1, null))
+            {
+                return ReferenceEquals(list2, null);
+            }
+            else if (ReferenceEquals(list2, null))
+            {
+                return false;
+            }
+
+            // Приведение списков к одному типу и сравнение
+            BaseList<T> convertedList2 = list2 as BaseList<T>;
+            return list1.IsEqual(convertedList2);
+        }
+
+        public static bool operator !=(BaseList<T> list1, BaseList<T> list2)
+        {
+            return !(list1 == list2);
+        }
+
+        public static BaseList<T> operator +(BaseList<T> list1, BaseList<T> list2)
+    {   
+        // Создаем новый список, используя тип данных первого списка
+        BaseList<T> result = (BaseList<T>)Activator.CreateInstance(list1.GetType());
+
+        // Копируем элементы из первого списка
+        for (int i = 0; i < list1.Count; i++)
+        {
+            result.Add(list1[i]);
+        }
+
+        // Копируем элементы из второго списка
+        for (int i = 0; i < list2.Count; i++)
+        {
+            result.Add(list2[i]);
+        }
+
+        // Возвращаем объединенный список
+        return result;
+    }
+
+
+
 }
