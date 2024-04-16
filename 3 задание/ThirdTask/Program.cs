@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 namespace MyLists
 {
@@ -227,7 +227,7 @@ namespace MyLists
 
             for (int i = 0; i < 10000; i++)
             {
-                int operation = random.Next(4); // Выбор операции
+                int operation = random.Next(5); // Выбор операции
                 string value = "Value" + random.Next(100); // Случайное значение
                 int index = random.Next(1, 100); // Случайный индекс
 
@@ -251,6 +251,11 @@ namespace MyLists
                             dynamicList.Clear();
                             linkedList.Clear();
                             break;
+                        case 4:
+                            // Создаем несуществующий файл для вызова исключения BadFileException
+                            dynamicList.LoadFromFile("nonexistent_file");
+                            linkedList.LoadFromFile("nonexistent_file");
+                            break;
                     }
                 }
                 catch (Exception e)
@@ -267,6 +272,13 @@ namespace MyLists
             Console.WriteLine("Тестирование завершено.");
             Console.WriteLine($"Количетсво изменений в динамик лист: {dynamicList.ChangeCount}");
             Console.WriteLine($"Количество изменений в линкед лист: {linkedList.ChangeCount}");
+
+            int badIndexExceptionCount = BadIndexException.GetExceptionCount();
+
+            int badFileExceptionCount = BadFileException.GetExceptionCount();
+
+            Console.WriteLine("Количество срабатываний исключения BadIndexException: " + badIndexExceptionCount);
+            Console.WriteLine("Количество срабатываний исключения BadFileException: " + badFileExceptionCount);
         }
     }
 }

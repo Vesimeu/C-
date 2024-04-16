@@ -5,18 +5,33 @@ public delegate void ChangeEventHandler(object sender, EventArgs e);
 
 public class BadIndexException : Exception
 {
+    private static int exceptionCount = 0;
+
     public BadIndexException(string message) : base(message)
     {
+        exceptionCount++;
+    }
+
+    public static int GetExceptionCount()
+    {
+        return exceptionCount;
     }
 }
 
 public class BadFileException : Exception
 {
+    private static int exceptionCount = 0;
+
     public BadFileException(string message) : base(message)
     {
+        exceptionCount++;
+    }
+
+    public static int GetExceptionCount()
+    {
+        return exceptionCount;
     }
 }
-
 public abstract class BaseList<T> where T : IComparable<T>
 {
 
@@ -183,6 +198,7 @@ public abstract class BaseList<T> where T : IComparable<T>
         }
         catch (Exception ex)
         {
+            Console.WriteLine("Исключение при загрузке из файла: " + ex.Message);
             throw new BadFileException("Error loading from file: " + ex.Message);
         }
     }
