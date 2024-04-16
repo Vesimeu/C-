@@ -13,3 +13,6 @@ C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технол
 C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.pdb
 C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.genruntimeconfig.cache
 C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ref\ThirdTask.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.csproj.AssemblyReference.cache
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\bin\Debug\net8.0\nunit.framework.dll
+C:\Users\Пётр\OneDrive\Рабочий стол\4 семестр\Технологии программирования\3 задание\ThirdTask\obj\Debug\net8.0\ThirdTask.csproj.CopyComplete

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "CWu98bMYmRCCroP5tefP0J6pfDOXXANW+DFhiFgImDf2rfPG06/lbDj6GONl/dkwamZLvXYtTHgj+BkL/z4Wew==",
+  "dgSpecHash": "/DQFDEnJ3NZJ4oU8CobxH4PYM0VBY6El6SIFYNV/YStLCVgQmtCxr/shnMPpc8jeXxgh/BI4d2GUOimcJt0F5Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Пётр\\OneDrive\\Рабочий стол\\4 семестр\\Технологии программирования\\3 задание\\ThirdTask\\ThirdTask.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Пётр\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Пётр\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\Пётр\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\Пётр\\.nuget\\packages\\nunit.consolerunner\\3.17.0\\nunit.consolerunner.3.17.0.nupkg.sha512"
+  ],
   "logs": []
 }

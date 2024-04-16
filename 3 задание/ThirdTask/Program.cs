@@ -176,6 +176,37 @@ namespace MyLists
             Console.WriteLine("Объединенный список:");
             mergedList.Print();
 
+
+            Console.WriteLine("*** ТЕСТИРОВКА метода Sort()***\n");
+            BaseList<int> numbers = new DynamicList<int>();
+            numbers.Add(5);
+            numbers.Add(2);
+            numbers.Add(8);
+            numbers.Add(1);
+
+            Console.WriteLine("Исходный список чисел:");
+            numbers.Print();
+
+            numbers.Sort();
+
+            Console.WriteLine("Список чисел после сортировки:");
+            numbers.Print();
+
+            BaseList<string> strings = new DynamicList<string>();
+            strings.Add("apple");
+            strings.Add("orange");
+            strings.Add("banana");
+            strings.Add("grape");
+
+            Console.WriteLine("Исходный список строк:");
+            strings.Print();
+
+            strings.Sort();
+
+            Console.WriteLine("Список строк после сортировки:");
+            strings.Print();
+
+
             // Console.WriteLine("*** ВЫЗОВ МЕТОДА ТЕСТИРОВКИ ***");
             // TestPerformance();
         }

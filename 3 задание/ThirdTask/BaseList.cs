@@ -187,15 +187,16 @@ public abstract class BaseList<T> where T : IComparable<T>
         }
     }
 
-//     public virtual IEnumerator<T> GetEnumeratorInternal()
-// {
-//     return new ListEnumerator<T>(this);
-// }
+    //     public virtual IEnumerator<T> GetEnumeratorInternal()
+    // {
+    //     return new ListEnumerator<T>(this);
+    // }
 
-// public IEnumerator<T> GetEnumerator()
-// {
-//     return GetEnumeratorInternal();
-// }
+    // public IEnumerator<T> GetEnumerator()
+    // {
+    //     return GetEnumeratorInternal();
+    // }
+    
     public void ForEach(Action<T> action)
         {
             for (int i = 0; i < Count; i++)
