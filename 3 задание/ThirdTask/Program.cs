@@ -1,9 +1,13 @@
-﻿﻿using System;
+﻿﻿﻿﻿using System;
 
 namespace MyLists
 {
     class Program
     {
+        private static int dynamicBadIndexExceptionCount = 0;
+        private static int dynamicBadFileExceptionCount = 0;
+        private static int linkedBadIndexExceptionCount = 0;
+        private static int linkedBadFileExceptionCount = 0;
         static void Main(string[] args)
         {
             BaseList<string> dynamicList = new DynamicList<string>();
@@ -261,6 +265,8 @@ namespace MyLists
                 catch (Exception e)
                 {
                     Console.WriteLine($"Ошибка: {e.Message}");
+                     CountExceptions(dynamicList, e); // Учет исключений для динамического списка
+                     CountExceptions(linkedList, e); // Учет исключений для связанного списка
                 }
             }
 
@@ -273,12 +279,37 @@ namespace MyLists
             Console.WriteLine($"Количетсво изменений в динамик лист: {dynamicList.ChangeCount}");
             Console.WriteLine($"Количество изменений в линкед лист: {linkedList.ChangeCount}");
 
-            int badIndexExceptionCount = BadIndexException.GetExceptionCount();
-
-            int badFileExceptionCount = BadFileException.GetExceptionCount();
-
-            Console.WriteLine("Количество срабатываний исключения BadIndexException: " + badIndexExceptionCount);
-            Console.WriteLine("Количество срабатываний исключения BadFileException: " + badFileExceptionCount);
+            Console.WriteLine("Количество срабатываний исключения BadIndexException для динамического списка: " + dynamicBadIndexExceptionCount);
+            Console.WriteLine("Количество срабатываний исключения BadFileException для динамического списка: " + dynamicBadFileExceptionCount);
+            Console.WriteLine("Количество срабатываний исключения BadIndexException для связанного списка: " + linkedBadIndexExceptionCount);
+            Console.WriteLine("Количество срабатываний исключения BadFileException для связанного списка: " + linkedBadFileExceptionCount);
         }
+        public static void CountExceptions<T>(BaseList<T> list, Exception ex) where T : IComparable<T>
+{
+    if (ex is BadIndexException)
+    {
+        if (list is DynamicList<T>)
+        {
+            dynamicBadIndexExceptionCount++;
+        }
+        else if (list is LinkedList<T>)
+        {
+            linkedBadIndexExceptionCount++;
+        }
+    }
+    else if (ex is BadFileException)
+    {
+        if (list is DynamicList<T>)
+        {
+            dynamicBadFileExceptionCount++;
+        }
+        else if (list is LinkedList<T>)
+        {
+            linkedBadFileExceptionCount++;
+        }
+    }
+}
+
+    
     }
 }

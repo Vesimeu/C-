@@ -182,26 +182,27 @@ public abstract class BaseList<T> where T : IComparable<T>
 
     public void LoadFromFile(string fileName)
     {
-        try
+    try
+    {
+        using (StreamReader reader = new StreamReader(fileName))
         {
-            Clear();
-            using (StreamReader reader = new StreamReader(fileName))
+            Clear(); // Очищаем список только перед загрузкой новых данных из файла
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    T item = (T)Convert.ChangeType(line, typeof(T));
-                    Add(item);
-                }
+                T item = (T)Convert.ChangeType(line, typeof(T));
+                Add(item);
             }
-            Change?.Invoke(this, EventArgs.Empty);
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine("Исключение при загрузке из файла: " + ex.Message);
-            throw new BadFileException("Error loading from file: " + ex.Message);
-        }
+        Change?.Invoke(this, EventArgs.Empty);
     }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Исключение при загрузке из файла: " + ex.Message);
+        throw new BadFileException("Error loading from file: " + ex.Message);
+    }
+}
+
 
     //     public virtual IEnumerator<T> GetEnumeratorInternal()
     // {
