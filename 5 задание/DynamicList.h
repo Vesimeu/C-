@@ -6,7 +6,7 @@
 class DynamicList : public BaseList {
 private:
     int* buffer;
-    int count;
+    // int count;
     int capacity;
 
 public:

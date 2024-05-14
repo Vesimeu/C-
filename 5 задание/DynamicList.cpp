@@ -4,7 +4,7 @@
 #include <iostream>
 #include "DynamicList.h"
 
-DynamicList::DynamicList() : buffer(new int[4]), count(0), capacity(4) {}
+DynamicList::DynamicList() : buffer(new int[4]), capacity(4) {}
 
 DynamicList::~DynamicList() {
     delete[] buffer;

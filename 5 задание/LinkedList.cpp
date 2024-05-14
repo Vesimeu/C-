@@ -14,7 +14,7 @@ int LinkedList::getCount() const {
 }
 
 void LinkedList::add(int item) {
-    std::cout<<count<<std::endl;
+    // std::cout<<count<<std::endl; отладочка
     if (!head) {
         head = new Node(item);
     } else {

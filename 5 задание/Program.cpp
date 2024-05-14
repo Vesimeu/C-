@@ -14,10 +14,13 @@ int main() {
     linkedList->add(10);
     linkedList->add(5);
 
+    dynamicList->add(4);
+
     // std::cout << "DynamicList after adding elements:" << std::endl;
     // dynamicList->print();
     std::cout << "LinkedList after adding elements:" << std::endl;
     linkedList->print();
+    dynamicList->print();
     std::cout << std::endl;
 
     delete dynamicList;

@@ -22,11 +22,11 @@ void BaseList::assignTo(BaseList& dest) const {
 }
 
 void BaseList::print() const {
-    std::cout << count << std::endl;
+    // std::cout << count << std::endl; Отладочка
     for (int i = 0; i < count; ++i) {
         std::cout << (*this)[i] << " ";
     }
-    std::cout << std::endl;
+    std::cout << std::endl; 
 }
 
 // BaseList* BaseList::clone() const {
